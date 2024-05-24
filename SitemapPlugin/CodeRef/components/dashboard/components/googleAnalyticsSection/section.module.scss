@@ -1,0 +1,40 @@
+@import "../../../../assets/scss/variables";
+
+.section {
+    position: relative;
+
+    &-wrapper {
+        margin: 0 auto;
+        max-width: 100%;
+        // max-width: 1280px;
+        overflow: hidden;
+        padding: 32px 0 0;
+
+        h3 {
+            margin-bottom: 0;
+        }
+    }
+
+    &.border-radius {
+        border-radius: 3px;
+    }
+}
+
+.chart-wrapper {
+    padding: 16px;
+    position: relative;
+}
+
+.statistic-list {
+    padding-top: 33px;
+}
+
+@media (max-width: 480px) {
+
+    .section {
+
+        &-wrapper {
+            padding-top: 16px;
+        }
+    }
+}

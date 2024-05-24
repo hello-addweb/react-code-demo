@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** font family */
+
+@font-face {
+  font-family: 'PoppinsRegular';
+  src: url('../assets/fonts/PoppinsRegular/PoppinsRegular.eot');
+  src: url('../assets/fonts/PoppinsRegular/PoppinsRegular.eot') format('embedded-opentype'),
+       url('../assets/fonts/PoppinsRegular/PoppinsRegular.woff2') format('woff2'),
+       url('../assets/fonts/PoppinsRegular/PoppinsRegular.woff') format('woff'),
+       url('../assets/fonts/PoppinsRegular/PoppinsRegular.ttf') format('truetype'),
+       url('../assets/fonts/PoppinsRegular/PoppinsRegular.svg#PoppinsRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'PoppinsMedium';
+  src: url('../assets/fonts/PoppinsMedium/PoppinsMedium.eot');
+  src: url('../assets/fonts/PoppinsMedium/PoppinsMedium.eot') format('embedded-opentype'),
+       url('../assets/fonts/PoppinsMedium/PoppinsMedium.woff2') format('woff2'),
+       url('../assets/fonts/PoppinsMedium/PoppinsMedium.woff') format('woff'),
+       url('../assets/fonts/PoppinsMedium/PoppinsMedium.ttf') format('truetype'),
+       url('../assets/fonts/PoppinsMedium/PoppinsMedium.svg#PoppinsMedium') format('svg');
+}
+
+@font-face {
+  font-family: 'PoppinsSemiBold';
+  src: url('../assets/fonts/PoppinsSemiBold/PoppinsSemiBold.eot');
+  src: url('../assets/fonts/PoppinsSemiBold/PoppinsSemiBold.eot') format('embedded-opentype'),
+       url('../assets/fonts/PoppinsSemiBold/PoppinsSemiBold.woff2') format('woff2'),
+       url('../assets/fonts/PoppinsSemiBold/PoppinsSemiBold.woff') format('woff'),
+       url('../assets/fonts/PoppinsSemiBold/PoppinsSemiBold.ttf') format('truetype'),
+       url('../assets/fonts/PoppinsSemiBold/PoppinsSemiBold.svg#PoppinsSemiBold') format('svg');
+}
+
+@font-face {
+  font-family: 'PoppinsBold';
+  src: url('../assets/fonts/PoppinsBold/PoppinsBold.eot');
+  src: url('../assets/fonts/PoppinsBold/PoppinsBold.eot') format('embedded-opentype'),
+       url('../assets/fonts/PoppinsBold/PoppinsBold.woff2') format('woff2'),
+       url('../assets/fonts/PoppinsBold/PoppinsBold.woff') format('woff'),
+       url('../assets/fonts/PoppinsBold/PoppinsBold.ttf') format('truetype'),
+       url('../assets/fonts/PoppinsBold/PoppinsBold.svg#PoppinsBold') format('svg');
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color:"grey";
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+}
+
+.sub-menu-list:hover + .sub-menu-box .sub-menu-link{
+  display: block;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

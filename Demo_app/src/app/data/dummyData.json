@@ -1,0 +1,695 @@
+{
+  "header-Data": {
+    "navLinks": [
+      {
+        "title": "Areas we service",
+        "redirect": "local-services",
+        "values": [
+          {
+            "innerLink": "Inner West Suburbs",
+            "innerValues": [
+              {
+                "topic": "Inner West Suburbs servicelists",
+                "subLinks": [
+                  "servicelists Annandale",
+                  "servicelists Newtown",
+                  "servicelists Ashfield",
+                  "servicelists Balmain",
+                  "servicelists Camperdown"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "Eastern Suburbs",
+            "innerValues": [
+              {
+                "topic": "Eastern Suburbs servicelists",
+                "subLinks": [
+                  "servicelists Bondi",
+                  "servicelists Bondi Junction",
+                  "servicelists Double Bay",
+                  "servicelists Dover Heights",
+                  "servicelists Elizabeth Bay",
+                  "servicelists Paddington"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "Western Suburbs",
+            "innerValues": [
+              {
+                "topic": "Western Suburbs servicelists",
+                "subLinks": [
+                  "servicelists Auburn",
+                  "servicelists Blacktown",
+                  "servicelists Fairfield",
+                  "servicelists Greystanes",
+                  "servicelists Guildford",
+                  "servicelists Holroyd",
+                  "servicelists Homebush"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "Southern Suburbs",
+            "innerValues": [
+              {
+                "topic": "Southern Suburbs servicelists",
+                "subLinks": [
+                  "servicelists Bankstown",
+                  "servicelists Beverly Hills",
+                  "servicelists Blakehurst",
+                  "servicelists Hurstville",
+                  "servicelists Kingsgrove",
+                  "servicelists Kogarah",
+                  "servicelists Monterey",
+                  "servicelists Rockdale",
+                  "servicelists South Sydney",
+                  "servicelists St George",
+                  "servicelists Sutherland Shire"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "North West Suburbs",
+            "innerValues": [
+              {
+                "topic": "North West Suburbs servicelists",
+                "subLinks": [
+                  "servicelists Baulkham Hills",
+                  "servicelists Beecroft",
+                  "servicelists Bella Vista",
+                  "servicelists Castle Hill",
+                  "servicelists Hills District",
+                  "servicelists Norwest"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "Northern Suburbs",
+            "innerValues": [
+              {
+                "topic": "Northern Suburbs servicelists",
+                "subLinks": [
+                  "servicelists North Shore",
+                  "servicelists Northern Beaches",
+                  "servicelists North Sydney",
+                  "servicelists Brookvale"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "Greater Sydney Suburbs",
+            "innerValues": [
+              {
+                "topic": "Greater Sydney Suburbs servicelists",
+                "subLinks": [
+                  "servicelists Austral",
+                  "servicelists Bass Hill",
+                  "servicelists St Helens Park",
+                  "servicelists Glen Alpine",
+                  "servicelists Englorie Park",
+                  "servicelists Minto",
+                  "servicelists Leumeah",
+                  "servicelists Ruse"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interstate services",
+        "redirect": "interstate-services",
+        "values": [
+          {
+            "innerLink": "Interstate services",
+            "innerValues": [
+              {
+                "topic": "Interstate by Route",
+                "subLinks": [
+                  "Sydney to Melbourne servicelists",
+                  "Melbourne to Sydney servicelists",
+                  "Sydney to Brisbane servicelists",
+                  "Brisbane to Sydney servicelists",
+                  "Sydney to Canberra servicelists",
+                  "Canberra to Sydney servicelists",
+                  "Sydney to Adelaide servicelists",
+                  "Adelaide to Sydney servicelists",
+                  "Melbourne to Brisbane servicelists",
+                  "Brisbane to Melbourne servicelists",
+                  "Sydney to Gold Coast servicelists",
+                  "Gold Coast to Sydney servicelists"
+                ]
+              },
+              {
+                "topic": "Interstate By City",
+                "subLinks": [
+                  "Interstate servicelists Australia Wide",
+                  "Interstate servicelists Adelaide",
+                  "Interstate servicelists Brisbane",
+                  "Interstate servicelists Canberra",
+                  "Interstate servicelists Gold Coast",
+                  "Interstate servicelists Melbourne",
+                  "Interstate servicelists Perth",
+                  "Interstate servicelists Sydney"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "Backloading service ls",
+            "innerValues": [
+              {
+                "topic": "Backloading by Route",
+                "subLinks": [
+                  "Sydney to Melbourne",
+                  "Melbourne to Sydney",
+                  "Sydney to Brisbane",
+                  "Brisbane to Sydney",
+                  "Sydney to Gold Coast",
+                  "Gold Coast to Sydney"
+                ]
+              },
+              {
+                "topic": "Backloading by City",
+                "subLinks": [
+                  "Adelaide Backloading",
+                  "Brisbane Backloading",
+                  "Canberra Backloading",
+                  "Gold Coast Backloading",
+                  "Melbourne Backloading",
+                  "Sydney Backloading"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Country services",
+        "redirect": "country-services",
+        "values": [
+          {
+            "innerLink": "North West",
+            "innerValues": [
+              {
+                "topic": "North West servicelists",
+                "subLinks": [
+                  "Sydney to Armidale servicelists",
+                  "Sydney to Blue Mountains",
+                  "Sydney to Bourke servicelists",
+                  "Sydney to Cessnock servicelists",
+                  "Sydney to Gunnedah servicelists",
+                  "Sydney to Glen Innes servicelists",
+                  "Sydney to Inverell servicelists",
+                  "Sydney To Kempsey",
+                  "Sydney to Tamworth servicelists"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "North",
+            "innerValues": [
+              {
+                "topic": "North servicelists",
+                "subLinks": [
+                  "Sydney to Ballina",
+                  "Sydney to Broken Hill servicelists",
+                  "Sydney to Byron Bay servicelists",
+                  "Sydney to Central Coast",
+                  "Sydney to Coffs Harbour",
+                  "Sydney to Gosford",
+                  "Sydney to Hunter Valley servicelists",
+                  "Sydney to Lismore servicelists",
+                  "servicelists Sydney to Newcastle",
+                  "Sydney to Port Macquarie",
+                  "Sydney to Taree servicelists"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "South",
+            "innerValues": [
+              {
+                "topic": "South servicelists",
+                "subLinks": [
+                  "Sydney to Albury servicelists",
+                  "Sydney to Batemans Bay servicelists",
+                  "Sydney to Bega servicelists",
+                  "Sydney to Capital Monaro & Snowy servicelists",
+                  "Sydney to Coonabarabran servicelists",
+                  "Sydney to Cooma servicelists",
+                  "Sydney to Finley servicelists",
+                  "Sydney to Goulburn servicelists",
+                  "Sydney to Grafton servicelists",
+                  "Sydney to Hay servicelists",
+                  "Sydney to Nowra",
+                  "Sydney to South Coast",
+                  "Sydney to South West",
+                  "Sydney to Southern Highlands",
+                  "Sydney to Kiama servicelists",
+                  "Sydney to Wollongong"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "West",
+            "innerValues": [
+              {
+                "topic": "West servicelists",
+                "subLinks": [
+                  "Sydney to Bathurst servicelists",
+                  "Sydney to Central Coast",
+                  "Sydney to Central West servicelists",
+                  "Sydney to Cobar servicelists",
+                  "Sydney to Corowa servicelists",
+                  "Sydney to Cowra servicelists"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "service Services & Trucks",
+        "redirect": "service-services",
+        "values": [
+          {
+            "innerLink": "service Truck Packages",
+            "innerValues": [
+              {
+                "topic": "service Truck Packages servicelists",
+                "subLinks": [
+                  "2 Men & 3T Truck",
+                  "2 Men & 4.5T Truck",
+                  "2 Men & 6-7T Truck",
+                  "2 Men & 10-12T Truck",
+                  "2 Men & 14-16T Truck",
+                  "3 Men & 14-16T Truck"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "service Services",
+            "innerValues": [
+              {
+                "topic": "service Services servicelists",
+                "subLinks": [
+                  "Hire servicers For Special Jobs",
+                  "Small service ls",
+                  "One Item service ls",
+                  "Heavy Furniture servicers",
+                  "Packers And servicers",
+                  "service ls Insurance"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "service Freebies / Deals",
+            "innerValues": [
+              {
+                "topic": "service Freebies / Deals servicelists",
+                "subLinks": [
+                  "Free service Boxes",
+                  "Cheap Tuesdays",
+                  "Packing Supplies For Your service",
+                  "service ls & Storage"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "Tools and Quotes",
+            "innerValues": [
+              {
+                "topic": "Tools and Quotes servicelists",
+                "subLinks": [
+                  "service l Costs Calculator",
+                  "Packing Calculator",
+                  "Interstate service Cost Calculator",
+                  "Quick Quote",
+                  "service Checklist"
+                ]
+              }
+            ]
+          },
+          {
+            "innerLink": "Specialist services",
+            "innerValues": [
+              {
+                "topic": "Specialist services servicelists",
+                "subLinks": [
+                  "Piano service ls",
+                  "Fridge servicelists",
+                  "Bed & Mattress servicers"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Storage",
+        "redirect": "storage",
+        "values": []
+      }
+    ],
+    "button-Title": "Get Quote",
+    "phone-number": "1300 721 826"
+  },
+  "homePageData": {
+    "metaData": {
+      "description": "An online platform for finding and booking vacation rentals worldwide.",
+      "keywords": "vacation rentals, holiday homes, booking, travel, servicelists",
+      "viewport": "width=device-width, initial-scale=1.0"
+    },
+    "homePageData": [
+      {
+        "key": "ratingSection",
+        "content": {
+          "section-header-data": {
+            "header": "Book Best Rated Furniture servicelists in Sydney",
+            "description": "<p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Are you looking to service home or offices in Sydney? Let our expert team take care of your precious belongings and furniture!</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>By using service, you’ll get access to expert <strong>Sydney servicelists</strong> and a wide range of <a href='#service-trucks' style='color:#f58220;text-decoration:underline;'>service trucks and packages</a> and quality <a href='https://www.servicesite.com.au/service-services/' style='color:#f58220;text-decoration:underline;'>service services</a> such as packing and unpacking, loading, transportation and affordable storage options.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>With a&nbsp;<a href='https://www.google.com/maps/place/service+servicelists+Sydney/@-33.9500987,151.0789357,17z/data=!3m1!4b1!4m5!3m4!1s0x6b12b96fc3a51341:0xb640d38b7f1e162f!8m2!3d-33.9501032!4d151.0811244' target='_blank' rel='noopener' style='color:#f58220;text-decoration:underline;'>4.7 Google rating</a> from over 2000 reviews, our teams have over a decade of experience in furniture service ls, providing a professional and friendly service combined with excellent customer satisfaction.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Whether you’re service a small studio apartment or a large family home, with service, you’ll only relocate with well-vetted furniture servicers who fully understand the stresses involved and who have a proven track record in and around Sydney, New South Wales and service Furniture Interstate.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Professional And Friendly Sydney service ls Services For Complete Peace Of Mind.</p>"
+          },
+          "social-ratings-data": {
+            "ratingAndReviewsData": [
+              {
+                "img": "https://via.placeholder.com/500",
+                "rating": "4.7",
+                "out-of": "5",
+                "reviews": "2838"
+              },
+              {
+                "img": "https://via.placeholder.com/500",
+                "rating": "4.9",
+                "out-of": "5",
+                "reviews": "415"
+              },
+              {
+                "img": "https://via.placeholder.com/500",
+                "rating": "4.8",
+                "out-of": "5",
+                "reviews": "271"
+              },
+              {
+                "img": "https://via.placeholder.com/500",
+                "rating": "4.6",
+                "out-of": "5",
+                "reviews": "38"
+              }
+            ],
+            "buttons-set": [
+              {
+                "iconSrc": "https://via.placeholder.com/500",
+                "btnTitle": "Home service Calculator",
+                "btnStyling": "bg-secondary flex items-center justify-center space-x-4 py-5 mx-0 sm:mx-20 my-3 rounded-xl"
+              },
+              {
+                "iconSrc": "https://via.placeholder.com/500",
+                "btnTitle": "Book Online & Get 10% off",
+                "btnStyling": "flex items-center justify-center space-x-4 py-5 mx-0 sm:mx-20 my-3 rounded-xl"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key": "sliderCardSection",
+        "content": {
+          "section-header-data": {
+            "header": "Approximately How Long Will My service Take?",
+            "description": "<p style='text-align:center; color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>While our professional servicelists will work at record time to service your valuable belongings, each job is different and will depend on factors such as how much you want to service, distance and type of service; that’s why we built this calculator.</p><p style='text-align:center; color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Calculations are based on industry-standard estimate, generic calculators and should be used as a guide only. This information does not constitute a fixed quote for the entire service process.</p>"
+          },
+          "BtnTitle": "Get My Quote Now",
+          "slider-card-image-data": [
+            {
+              "imgSrc": "https://via.placeholder.com/500",
+              "title": "Lightly furnished"
+            },
+            {
+              "imgSrc": "https://via.placeholder.com/500",
+              "title": "Moderately furnished"
+            },
+            {
+              "imgSrc": "https://via.placeholder.com/500",
+              "title": "Heavily furnished"
+            }
+          ],
+          "slider-card-dropdown-data": [
+            { "value": "1 Bedrooms", "label": "1 Bedroom Apartment/House" },
+            { "value": "2 Bedrooms", "label": "2 Bedroom Apartment/House" },
+            { "value": "3 Bedrooms", "label": "3 Bedroom Apartment/House" },
+            { "value": "4 Bedrooms", "label": "1 Bedroom Apartment/House" }
+          ]
+        }
+      },
+      {
+        "key": "videoSection",
+        "content": {
+          "section-header-data": {
+            "header": "Customers Recommend Our service list Sydney Services",
+            "description": "<p style='text-align:center; color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>As a fully AFRA accredited furniture service ls company, we help take the stress out of service by ensuring your goods and belongings are safely delivered to your new home.</p><p style='text-align:center; color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Watch Our Video To See Why We Can Offer The Best service ls Experience For You</p>"
+          },
+          "redirectionUrl": "https://www.youtube.com/watch?v=fqBBmxrRoak"
+        }
+      },
+      {
+        "key": "stickyImageSection",
+        "content": {
+          "heading": "Simply The Best servicelists For When service House",
+          "title": "Here’s a little more about why we are one of the best furniture servicelists:",
+          "image-source": "https://via.placeholder.com/500",
+          "section-header-data": {
+            "header": "Why We’re Considered The Best service Company in Sydney NSW",
+            "description": "<p style='text-align:center; color: #ffffff; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>When you choose service, you’ll be working with affordable, AFRA-accredited and reliable servicelists in Sydney who are widely regarded in the industry. Our professional servicelists have the knowledge and the experience to make every job stress-free, quick and cost-effective for all clients.</p><p style='text-align:center; color: #ffffff; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Due to our commitments to the job, we often have repeat customers and regularly receive referrals from individuals and businesses who highly recommend our service ls services. For us, there’s no greater feeling than another satisfied customer.</p>"
+          },
+          "servicelists-quality-list": [
+            {
+              "imgURL": "https://via.placeholder.com/500",
+              "title": "Expert servicelists",
+              "description": "Each service list job will include a quality efficient service ls team, service trucks and the proper equipment to make your service as smooth as possible."
+            },
+            {
+              "imgURL": "https://via.placeholder.com/500",
+              "title": "Book Online Hassle Free",
+              "description": "Our quote process is super easy. Save time by getting quote in under 30 seconds with our customer service team. We also have a service calculator to help work out how much your Sydney service list cost will be in minutes!"
+            },
+            {
+              "imgURL": "https://via.placeholder.com/500",
+              "title": "Australian Furniture servicelists Association Accreditation",
+              "description": "We are fully compliant with guidelines set by the Australian Furniture Reservicers Association, meaning that we operate to the highest industry standards and are insured, regulated and accountable."
+            },
+            {
+              "imgURL": "https://via.placeholder.com/500",
+              "title": "Fully Managed Service ",
+              "description": "To ensure a stress free service to your new home, we assign a dedicated service coordinator for the job, who will keep an eye on your team and act as your main point of contact."
+            },
+            {
+              "imgURL": "https://via.placeholder.com/500",
+              "title": "Flexible, Tailored service Services",
+              "description": "At service, we know that different customers will need a bespoke and flexible approach for their individual budgets, needs and circumstances. Whether its packing assistance or a more specialised type of service, we have a wide range of services you can pick from to build your ideal service."
+            },
+            {
+              "imgURL": "https://via.placeholder.com/500",
+              "title": "Honest and clear prices",
+              "description": "Unlike other service l companies, there are no hidden fees, admin costs or other surprises. Your quote will be fully itemised and transparent right from the first phone call with us, giving you peace of mind that you’re getting the best price possible from our services in Sydney."
+            },
+            {
+              "imgURL": "https://via.placeholder.com/500",
+              "title": "Sydney service ls With A Can-Do Attitude",
+              "description": "From our quality service list team to the person on the end of the phone, service’s staff are always pleasant, friendly, and willing to go the extra mile.        "
+            }
+          ]
+        }
+      },
+      {
+        "key": "titleSection",
+        "content": {
+          "title": "Our Local and Sydney Interstate service ls Reviews"
+        }
+      },
+      {
+        "key": "featureImageSection",
+        "content": [
+          {
+            "componentsData": [
+              {
+                "name": "text",
+                "data": {
+                  "title": "About Living In Sydney NSW",
+                  "description": "<p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>service to a new home in Sydney can be an exciting and life-changing experience. It is known as the largest populated city in Australia and offers a dynamic and diverse lifestyle, with a range of neighbourhoods to suit all types of people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>From working in the bustling central business district to living in peaceful suburbs, there is something for everyone.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>The city is also widely known around the world for having iconic landmarks, such as the Opera House and the Sydney Harbour Bridge along with its beautiful beaches, including Bondi and Manly.</p>",
+                  "buttonData": [
+                    { "btnTitle": "Read More", "btnColor": "#f58220" }
+                  ]
+                }
+              },
+              {
+                "name": "image",
+                "data": {
+                  "imgSrc": "https://via.placeholder.com/500"
+                }
+              }
+            ]
+          },
+          {
+            "componentsData": [
+              {
+                "name": "image",
+                "data": {
+                  "imgSrc": "https://via.placeholder.com/500"
+                }
+              },
+              {
+                "name": "text",
+                "data": {
+                  "title": "Facts About Sydney NSW",
+                  "description": "<ul><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>It is the capital of New South Wales and has the largest population in Australia. It has an estimated population of over 5.3 million people as of 2021.</li><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>The city has many iconic landmarks, for which, the most well-known include the Sydney Opera House and the Sydney Harbour Bridge.</li><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>It has a popular tourist destination, attracting millions of visitors each year for its beaches, cultural attractions, and natural beauty.</li><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>It has a popular hub of art, culture, and education, with numerous museums, galleries, and universities.</li><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>It has a rich sporting culture, with many sports such as rugby, cricket and football.</li></ul>"
+                }
+              }
+            ]
+          },
+          {
+            "componentsData": [
+              {
+                "name": "text",
+                "data": {
+                  "title": "How Much Does It Cost To service In Sydney?",
+                  "description": "<p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>For many people, service l costs are one of the main deciding factors when they choose a service list, which is why we streamline every aspect of what we do and pass on the savings with no hidden costs.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>While the average servicelists hourly rate can range from $142 – to $200 (plus GST), there are a few things that can reduce or increase that amount:</p><ul><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'><strong>The type of service</strong>: Are you for example service a small apartment, 1 bedroom, 2 bedroom,3 bedroom, 4 bedroom house?</li><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'><strong>Distance travelled</strong>: Are you service interstate, country or to a local postcode?</li><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'><strong>Cargo Size</strong>: Including weight and dimensions.</li><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'><strong>Easy Of Accessibility</strong>: Including parking, lifts, stairs, tight hallways, and obstacles.</li><li style='color: #777777; font-size: 17.6px; margin-bottom:18px; font-family:sans-serif; font-weight:500'><strong>Timing</strong>: Whether the service is scheduled for the weekend or a holiday</li></ul>",
+                  "buttonData": []
+                }
+              },
+              {
+                "name": "image",
+                "data": {
+                  "imgSrc": "https://via.placeholder.com/500"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "customerSection",
+        "content": {
+          "title": "Trusted by Thousands of Happy Customers",
+          "img": "https://via.placeholder.com/500"
+        }
+      },
+
+      {
+        "key": "advantageSection",
+        "content": {
+          "title": "Key Advantages To service With service",
+          "img": "https://via.placeholder.com/500",
+          "subTitle": "2,000+ customer reviews from Google, Product Review, TrustPilot and Facebook combined"
+        }
+      },
+      {
+        "key": "faqSection",
+        "content": {
+          "title": "Frequently Asked Questions",
+          "questionsList": [
+            { "id": "q1", "question": "What Is The Cheapest Day to service?" },
+            {
+              "id": "q2",
+              "question": "Do servicelists Always Provide Free Boxes?"
+            },
+            {
+              "id": "q3",
+              "question": "Does Packing Come With Your servicelists Sydney Service?"
+            },
+            { "id": "q4", "question": "Are servicelists Cheaper On Weekdays?" },
+            {
+              "id": "q5",
+              "question": "How Long Does It Generally Take To service Homes?"
+            },
+            { "id": "q6", "question": "Do servicelists Have Insurance?" },
+            {
+              "id": "q7",
+              "question": "What Are The Best Times To Start A service list Job? "
+            },
+            { "id": "q8", "question": "Do You Pay For servicelists Upfront?" },
+            {
+              "id": "q9",
+              "question": "Is There A Checklist To Help Me Prepare For My service?"
+            },
+            {
+              "id": "q10",
+              "question": "Can I Help The servicelists Load The Truck?"
+            },
+            { "id": "q11", "question": "Do You Offer Storage Solutions?" }
+          ],
+          "questionAnswerSet": [
+            {
+              "id": "q1",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q2",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q3",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q4",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q5",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q6",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q7",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q8",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q9",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q10",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            },
+            {
+              "id": "q11",
+              "question": "What Is The Cheapest Day to service?",
+              "answer": "<div> <p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Typically, the middle of the week is considered the cheapest time to service, as service companies are less busy and likely to offer discounts at a reasonable price.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Fridays and weekends are usually the busiest (and therefore the most expensive) days, as they are more convenient for people.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500'>Prices can also be affected by other factors such as distance, size of the service list job, and demand.</p><p style='color: #777777; font-size: 17.6px; margin-top:17px; margin-bottom:18px; font-family:sans-serif; font-weight:500' data-pm-slice='1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{&quot;quillNestingLevel&quot;:0}]'>We also offer our very own <a style='color: #f58220; text-decoration:underline' href='/cheap-tuesdays/'>cheap servicelists</a> deals.</p> </div>"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

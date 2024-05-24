@@ -1,0 +1,33 @@
+.section {
+    position: relative;
+
+    &-wrapper {
+        margin: 0 auto;
+        max-width: 1058px;
+        overflow: hidden;
+        padding: 32px 0 0;
+
+        h3 {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.chart-wrapper {
+    padding: 16px;
+}
+
+.statistic-list {
+    padding-top: 33px;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+
+    .section {
+
+        &-wrapper {
+            padding-top: 16px;
+        }
+    }
+}
