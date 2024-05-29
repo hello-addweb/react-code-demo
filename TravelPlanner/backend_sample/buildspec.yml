@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - git config --global credential.helper store
+      - GITHUB_ACCESS_TOKEN=$(aws ssm get-parameter --name github-access-token --with-decryption --query "Parameter.Value" --output text)
+      - echo "https://cshenrik:${GITHUB_ACCESS_TOKEN}@github.com" > ~/.git-credentials
+      - npm install
+  build:
+    commands:
+      - npm run-script build
+      - find build -exec touch -m --date="2020-01-30" {} \; #hack to avoid replacing lambdas when they are unchanged. See https://github.com/aws/aws-cli/issues/3131
+      - aws cloudformation package --template template.yml --s3-bucket ${ARTIFACT_STORE} --output-template template-export.yml
+artifacts:
+  type: zip
+  files:
+    - template-export.yml
+    - config/*

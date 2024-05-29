@@ -1,0 +1,111 @@
+service: sitemap-payments-application
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  runtime: nodejs16.x
+  region: ${env:REGION}
+  s3Bucket: ${env:S3_BUCKET}
+  s3PublicBucket: ${env:S3_PUBLIC_BUCKET}
+  s3:
+    host: 0.0.0.0
+    bucket: sitemap
+    port: 8002
+    directory: /tmp
+  cognitoUserPoolId: ${env:COGNITO_USER_POOL_ID}
+  userSitesTable: 'users-sites-${self:provider.stage}'
+  paymentsTable: 'payments-${self:provider.stage}'
+  siteInfoTable: 'site-info-${self:provider.stage}'
+  webmasterInfoTable: 'webmaster-info-${self:provider.stage}'
+  sitemapUnitsTable: 'sitemap-units-${self:provider.stage}'
+  subscriptionLogsTable: 'subscription-logs-table-${self:provider.stage}'
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+  serverless-offline:
+    port: 11005
+    host: 0.0.0.0 # important for calls from docker!
+  prefix: ${self:custom.stage}-${self:service}
+  customDomain:
+    domainName: "payments.sitemap.com"
+    basePath: ''
+    stage: "${opt:stage, self:provider.stage}"
+    createRoute53Record: true
+  apiGatewayThrottling:
+    maxRequestsPerSecond: 10
+    maxConcurrentRequests: 10
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-dotenv-plugin
+  - serverless-prune-plugin
+  - serverless-api-gateway-throttling
+  - serverless-domain-manager
+provider:
+  name: aws
+  timeout: 60
+  apiGateway:
+    usagePlan:
+      throttle:
+        rateLimit: 10
+  runtime: nodejs16.x
+  stage: ${env:STAGE}
+  region: ${self:custom.region}
+  versionFunctions: false
+  iamRoleStatements:
+    #DynamoDB
+    - Effect: Allow
+      Action:
+      - dynamodb:Query
+      - dynamodb:Scan
+      - dynamodb:GetItem
+      - dynamodb:PutItem
+      - dynamodb:UpdateItem
+      - dynamodb:DeleteItem
+      - dynamodb:BatchGetItem
+      - dynamodb:BatchWriteItem
+      - cognito-idp:ListUsers
+      - cognito-idp:adminGetUser
+      - cognito-idp:AdminListGroupsForUser
+      Resource:
+      - "*"
+    - Effect: Allow
+      Action: 's3:ListBucket'
+      Resource: '*'
+    #S3:
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource:
+        - "*"
+    #SES
+    - Effect: Allow
+      Action:
+        - ses:SendEmail
+      Resource:
+        - "*"
+        
+  environment:
+    USER_SITES_TABLE: ${self:custom.userSitesTable}
+    PAYMENTS_TABLE: ${self:custom.paymentsTable}
+    SITE_INFO_TABLE: ${self:custom.siteInfoTable}
+    WEBMASTERS_TABLE: ${self:custom.webmasterInfoTable}
+    SITEMAP_UNITS_TABLE: ${self:custom.sitemapUnitsTable}
+    SUBSCRIPTION_LOGS_TABLE: ${self:custom.subscriptionLogsTable}
+    MAX_SITEMAP_UNIT_SIZE: ${env.MAX_SITEMAP_UNIT_SIZE}
+    S3_BUCKET: '${env:S3_BUCKET}'
+    REGION: ${self:custom.region}
+    PAYMENT_TEST_API_URL: https://payment-service-stage.api.com/test
+    PAYMENY_PROD_API_URL: https://payments.sitemap.com
+    PATMENT_PREVIEW_API_URL: https://hbzb4osave.execute-api.us-west-1.amazonaws.com/preview
+    SITEMAP_FOLDER: sitemap
+    CONFIG_FOLDER: config
+    WP_API_ENDPOINT: index.php?rest_route=/sitemap_premium/v1
+    CRYPTO_SALT: TEST_CRYPTO_SALT
+    DYNAMODB_ENDPOINT: ${env:DYNAMODB_ENDPOINT}
+    S3_ENDPOINT: ${env:S3_ENDPOINT}
+    EMAIL_SENDER: ${env:EMAIL_SENDER}
+    STAGE: ${env:STAGE}
+    IS_OFFLINE: ${env:IS_OFFLINE}
+functions:
+  - ${file(functions/payment-functions.yml)}
+resources:
+  - ${file(resources/sitemap-auth.yml)}

@@ -1,0 +1,232 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Products Endpoints
+
+Parameters:
+  EnvironmentParameter:
+    Type: String
+    Default: Stage
+    AllowedValues: [Stage, Prod]
+
+Globals:
+  Api:
+    Cors:
+      AllowMethods: "'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT'"
+      AllowHeaders: "'Content-Type,X-Amz-Date,X-Amz-Security-Token,Authorization,X-Api-Key,X-Requested-With,Accept,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Access-Control-Allow-Headers'"
+      AllowOrigin: "'*'"
+  Function:
+    Timeout: 120
+    MemorySize: 1024
+    Environment:
+      Variables:
+        ENVIRONMENT: !Ref EnvironmentParameter
+        MONGO_URI: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/MONGO_URI}}"
+        MONGO_DB_NAME: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/MONGO_DB_NAME}}"
+        PRODUCT_SEARCH_LIMIT: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/PRODUCT_SEARCH_LIMIT}}"
+        DYNAMIC_LINK_DOMAIN: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/DYNAMIC_LINK_DOMAIN}}"
+        FIREBASE_API_KEY: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/FIREBASE_API_KEY}}"
+        REDIS_CACHE_DOMAIN: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/REDIS_CACHE_DOMAIN}}"
+        REDIS_CACHE_PORT: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/REDIS_CACHE_PORT}}"
+        FACEBOOK_GRAPH_API_ENDPOINT: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/FACEBOOK_GRAPH_API_ENDPOINT}}"
+        CONVERSION_API_PIXEL_ID: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CONVERSION_API_PIXEL_ID}}"
+        CONVERSION_API_TOKEN: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CONVERSION_API_TOKEN}}"
+        TRIGGER_CONVERSION_EVENT_QUEUE_URL: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/TRIGGER_CONVERSION_EVENT_QUEUE_URL}}"
+        ELASTIC_ENDPOINT: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/ELASTIC_ENDPOINT}}"
+        ELASTIC_API_KEY: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/ELASTIC_API_KEY}}"
+        CREATE_PRODUCT_QUEUE_ARN: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CREATE_PRODUCT_QUEUE_ARN}}"
+        CREATE_PRODUCT_SQS: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CREATE_PRODUCT_SQS}}"
+        DELETE_ZOHO_PRODUCT_SQS: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/DELETE_ZOHO_PRODUCT_SQS}}"
+
+Resources:
+  # product apis
+  CreateProductFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/CreateProduct/app.lambdaHandler
+      CodeUri: ./build
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Events:
+        CreateProduct:
+          Type: Api
+          Properties:
+            Path: /api/v1/product
+            Method: post
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Sid: AllowSQSSendMessages
+              Effect: Allow
+              Action:
+                - sqs:SendMessage
+              Resource: "arn:aws:sqs:me-central-1:792123045589:createZohoProduct"
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        Sourcemap: true
+        EntryPoints:
+          - functions/CreateProduct/app.js
+
+  UpdateProductFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/UpdateProduct/app.lambdaHandler
+      CodeUri: ./build
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Events:
+        UpdateProduct:
+          Type: Api
+          Properties:
+            Path: /api/v1/product
+            Method: patch
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        Sourcemap: true
+        EntryPoints:
+          - functions/UpdateProduct/app.js
+
+  DeleteProductFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/DeleteProduct/app.lambdaHandler
+      CodeUri: ./build
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Events:
+        DeleteProduct:
+          Type: Api
+          Properties:
+            Path: /api/v1/product
+            Method: delete
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Sid: AllowSQSSendMessages
+              Effect: Allow
+              Action:
+                - sqs:SendMessage
+              Resource: !Sub '{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CREATE_PRODUCT_QUEUE_ARN}}'
+        - Version: "2012-10-17"
+          Statement:
+            - Sid: AllowSQSSendMessagesDeleteProduct
+              Effect: Allow
+              Action:
+                - sqs:SendMessage
+              Resource: !Sub '{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/DELETE_ZOHO_PRODUCT_QUEUE_ARN}}'
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        Sourcemap: true
+        EntryPoints:
+          - functions/DeleteProduct/app.js
+
+  GetProductFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/GetProduct/app.lambdaHandler
+      CodeUri: ./build
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Events:
+        GetProduct:
+          Type: Api
+          Properties:
+            Path: /api/v1/product
+            Method: get
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        Sourcemap: true
+        EntryPoints:
+          - functions/GetProduct/app.js
+
+  GetProductDetailsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/GetProductDetails/app.lambdaHandler
+      CodeUri: ./build
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Events:
+        GetProductDetails:
+          Type: Api
+          Properties:
+            Path: /api/v1/product/details/{slug}
+            Method: get
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Sid: AllowSQSSendMessages
+              Effect: Allow
+              Action:
+                - sqs:SendMessage
+              Resource: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/TRIGGER_CONVERSION_EVENT_QUEUE_ARN}}"
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        Sourcemap: true
+        EntryPoints:
+          - functions/GetProductDetails/app.js
+
+  GetProductVariationsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/GetProductVariations/app.lambdaHandler
+      CodeUri: ./build
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Events:
+        GetProductVariations:
+          Type: Api
+          Properties:
+            Path: /api/v1/product/variations/{slug}
+            Method: get
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        Sourcemap: true
+        EntryPoints:
+          - functions/GetProductVariations/app.js
+
+  GetProductVariationsV2Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/GetProductVariationsV2/app.lambdaHandler
+      CodeUri: ./build
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Events:
+        GetProductVariations:
+          Type: Api
+          Properties:
+            Path: /api/v2/product/variations/{slug}
+            Method: get
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2020
+        Sourcemap: true
+        EntryPoints:
+          - functions/GetProductVariationsV2/app.js

@@ -1,0 +1,232 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  journey-feed-service
+  Sample SAM Template for journey-feed-service
+Parameters:
+  EnvironmentName:
+    Type: String
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Runtime: nodejs14.x
+    MemorySize: 1024
+    Timeout: 50
+    Handler: index.handler
+Resources:
+  ApiGateway:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      Auth: 
+        Authorizers:
+          OAuth2Authorizer:
+            IdentitySource: $request.header.Authorization
+            JwtConfiguration:
+              audience:
+                - 1eabeg7d83jfjg9gmo9371uhqa
+              issuer: "https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_7bABXymBo"
+        DefaultAuthorizer: OAuth2Authorizer
+  GetFeaturedEntriesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: build/handlers/get-featured-entries
+      Environment:
+        Variables:
+          ENVIRONMENT_NAME: stage
+          EventBusName: DefaultGoSafrEventBus
+      Events:
+        Get:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ApiGateway
+            Path: /journeys/{journeyId}/users/{userId}/featured-entries
+            Method: get
+      Policies:
+        - EventBridgePutEventsPolicy:
+            EventBusName: DefaultGoSafrEventBus
+        - DynamoDBReadPolicy:
+            TableName: !Ref JourneyFeedServiceTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref JourneyFeedServiceTable
+        - SSMParameterReadPolicy:
+            ParameterName: journey-feed-service/*
+  ReadTimelineEntriesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: build/handlers/read-timeline-entries
+      Environment:
+        Variables:
+          ENVIRONMENT_NAME: stage
+      Events:
+        Get:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ApiGateway
+            Path: /journeys/{journeyId}/users/{userId}/read-timelines
+            Method: post            
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref JourneyFeedServiceTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref JourneyFeedServiceTable
+        - SSMParameterReadPolicy:
+            ParameterName: journey-feed-service/*
+  GetTimelineEntriesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: build/handlers/get-timeline-entries
+      Environment:
+        Variables:
+          ENVIRONMENT_NAME: stage
+      Events:
+        Get:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ApiGateway
+            Path: /journeys/{journeyId}/users/{userId}/timeline-entries
+            Method: get
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref JourneyFeedServiceTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref JourneyFeedServiceTable
+        - SSMParameterReadPolicy:
+            ParameterName: journey-feed-service/*
+  journeyFeedServiceFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Runtime: nodejs14.x
+      CodeUri: build/handlers/journey-feed-service
+      Events:
+        JourneyCreated:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: DefaultGoSafrEventBus    
+            Pattern:
+              detail-type:
+                - JourneyCreated
+              source:
+                - JourneyService
+        PinpointEvents:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: DefaultGoSafrEventBus     
+            Pattern:
+              detail-type:
+                - CustomMessagePublished
+              source:
+                - PinpointService   
+        UserEventRule:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: DefaultGoSafrEventBus     
+            Pattern:
+              detail-type:
+                - InsurancesUpdated
+                - UserProfileUpdated
+                - UserDocumentsUpdated
+              source:
+                - UserService           
+        ParticipantsRule:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: DefaultGoSafrEventBus
+            Pattern:
+              detail-type:
+                - ParticipantAdded
+                - ParticipantUpdated
+                - ParticipantRemoved
+              source:
+                - JourneyService
+            DeadLetterConfig:
+              Type: SQS
+        AlertsRule:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: DefaultGoSafrEventBus
+            Pattern:
+              detail-type:
+                - AlertCreated
+                - AlertUpdated
+              source:
+                - AlertService
+            DeadLetterConfig:
+              Type: SQS
+        FlightAlertsRule:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: DefaultGoSafrEventBus
+            Pattern:
+              detail-type:
+                - FlightAlertCreated
+                - FlightAlertUpdated
+              source:
+                - FlightService
+            DeadLetterConfig:
+              Type: SQS
+        TripsRule:
+          Type: EventBridgeRule
+          Properties:
+            EventBusName: DefaultGoSafrEventBus
+            Pattern:
+              detail-type:
+                - TripAdded
+                - TripUpdated
+                - TripDeleted
+              source:
+                - JourneyService
+            DeadLetterConfig:
+              Type: SQS                    
+      Environment:
+        Variables:
+          ENVIRONMENT_NAME: stage
+      EventInvokeConfig:
+        MaximumEventAgeInSeconds: 900
+        MaximumRetryAttempts: 2
+        DestinationConfig:
+          OnFailure:
+            Type: SQS
+            Destination: !GetAtt journeyFeedServiceFunctionDlq.Arn
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref JourneyFeedServiceTable
+        - DynamoDBWritePolicy:
+            TableName: !Ref JourneyFeedServiceTable
+        - SSMParameterReadPolicy:
+            ParameterName: journey-feed-service/*
+
+  journeyFeedServiceFunctionDlq:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: journeyFeedServiceFunctionDlq
+
+  JourneyFeedServiceTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: JourneyFeedServiceTable
+      BillingMode: PAY_PER_REQUEST
+      StreamSpecification: 
+        StreamViewType: NEW_AND_OLD_IMAGES
+      AttributeDefinitions:
+        - AttributeName: PK
+          AttributeType: S
+        - AttributeName: SK
+          AttributeType: S
+        - AttributeName: GSI1_PK
+          AttributeType: S
+        - AttributeName: GSI1_SK
+          AttributeType: S
+      KeySchema:
+        - AttributeName: PK
+          KeyType: HASH
+        - AttributeName: SK
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: GSI1
+          KeySchema:
+            - AttributeName: GSI1_PK
+              KeyType: HASH
+            - AttributeName: GSI1_SK
+              KeyType: RANGE
+          Projection: 
+            ProjectionType: ALL

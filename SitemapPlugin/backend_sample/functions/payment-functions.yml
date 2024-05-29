@@ -1,0 +1,117 @@
+subscribe:
+  handler: controllers/payment/subscribe.lambda
+  events:
+    - http:
+        path: payment/subscribe
+        method: post
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+subscriptionInfo:
+  handler: controllers/payment/subscriptionInfo.lambda
+  events:
+    - http:
+        path: payment/subscriptionInfo
+        method: post
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+getAllTransaction:
+  handler: controllers/payment/getAllTransaction.lambda
+  events:
+    - http:
+        path: payment/getAllTransaction
+        method: post
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+getPaymentInfo:
+  handler: controllers/payment/getPaymentInfo.lambda
+  events:
+    - http:
+        path: payment/get-payment-info
+        method: get
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+updatePaymentInfo:
+  handler: controllers/payment/updatePaymentInfo.lambda
+  events:
+    - http:
+        path: payment/update-payment-info
+        method: put
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+generateToken:
+  handler: controllers/payment/generateToken.lambda
+  events:
+    - http:
+        path: payment/generate-token
+        method: post
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+getCustomerId:
+  handler: controllers/payment/getCustomerId.lambda
+  events:
+    - http:
+        path: payment/get-customer-id
+        method: get
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+getCustomerDetail:
+  handler: controllers/payment/getCustomerDetail.lambda
+  events:
+    - http:
+        path: payment/get-customer-detail
+        method: get
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+updateCustomerDetail:
+  handler: controllers/payment/updateCustomerDetail.lambda
+  events:
+    - http:
+        path: payment/update-customer-detail
+        method: post
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+transaction:
+  handler: controllers/payment/transaction.lambda
+  events:
+    - http:
+        path: payment/transaction
+        method: post
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId: { Ref: SitemapPaymentApiGatewayAuthorizer }
+
+getPlans:
+  handler: controllers/payment/getPlans.lambda
+  events:
+    - http:
+        path: payment/get-plans
+        method: get
+        cors: true

@@ -1,0 +1,43 @@
+{
+  "name": "sitemap-ddb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "billing.js",
+  "scripts": {
+    "test": "../../node_modules/.bin/serverless-bundle test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "blob-stream": "^0.1.3",
+    "body-parser": "^1.19.1",
+    "braintree": "^2.21.0",
+    "express": "^4.17.2",
+    "googleapis": "^49.0.0",
+    "json-2-csv": "^3.17.2",
+    "jsonschema": "^1.2.4",
+    "moment": "^2.29.4",
+    "node-fetch": "^2.3.0",
+    "pdfkit": "^0.13.0",
+    "pdfkit-table": "^0.1.99",
+    "request-ip": "^3.3.0",
+    "serverless": "^2.69.1",
+    "serverless-api-gateway-throttling": "^2.0.2",
+    "sitemap": "^5.0.1",
+    "verify-cognito-token": "^1.2.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.5",
+    "file-loader": "^6.2.0",
+    "serverless-bundle": "^4.3.1",
+    "serverless-domain-manager": "^7.0.2",
+    "serverless-dotenv-plugin": "^3.12.2",
+    "serverless-offline": "^8.3.1",
+    "serverless-prune-plugin": "^2.0.1",
+    "serverless-webpack": "^5.6.0"
+  }
+}
