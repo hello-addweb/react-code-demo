@@ -20,22 +20,22 @@ Globals:
     Environment:
       Variables:
         ENVIRONMENT: !Ref EnvironmentParameter
-        MONGO_URI: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/MONGO_URI}}"
-        MONGO_DB_NAME: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/MONGO_DB_NAME}}"
-        PRODUCT_SEARCH_LIMIT: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/PRODUCT_SEARCH_LIMIT}}"
-        DYNAMIC_LINK_DOMAIN: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/DYNAMIC_LINK_DOMAIN}}"
-        FIREBASE_API_KEY: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/FIREBASE_API_KEY}}"
-        REDIS_CACHE_DOMAIN: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/REDIS_CACHE_DOMAIN}}"
-        REDIS_CACHE_PORT: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/REDIS_CACHE_PORT}}"
-        FACEBOOK_GRAPH_API_ENDPOINT: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/FACEBOOK_GRAPH_API_ENDPOINT}}"
-        CONVERSION_API_PIXEL_ID: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CONVERSION_API_PIXEL_ID}}"
-        CONVERSION_API_TOKEN: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CONVERSION_API_TOKEN}}"
-        TRIGGER_CONVERSION_EVENT_QUEUE_URL: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/TRIGGER_CONVERSION_EVENT_QUEUE_URL}}"
-        ELASTIC_ENDPOINT: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/ELASTIC_ENDPOINT}}"
-        ELASTIC_API_KEY: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/ELASTIC_API_KEY}}"
-        CREATE_PRODUCT_QUEUE_ARN: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CREATE_PRODUCT_QUEUE_ARN}}"
-        CREATE_PRODUCT_SQS: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CREATE_PRODUCT_SQS}}"
-        DELETE_ZOHO_PRODUCT_SQS: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/DELETE_ZOHO_PRODUCT_SQS}}"
+        MONGO_URI: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/MONGO_URI}}"
+        MONGO_DB_NAME: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/MONGO_DB_NAME}}"
+        PRODUCT_SEARCH_LIMIT: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/PRODUCT_SEARCH_LIMIT}}"
+        DYNAMIC_LINK_DOMAIN: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/DYNAMIC_LINK_DOMAIN}}"
+        FIREBASE_API_KEY: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/FIREBASE_API_KEY}}"
+        REDIS_CACHE_DOMAIN: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/REDIS_CACHE_DOMAIN}}"
+        REDIS_CACHE_PORT: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/REDIS_CACHE_PORT}}"
+        FACEBOOK_GRAPH_API_ENDPOINT: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/FACEBOOK_GRAPH_API_ENDPOINT}}"
+        CONVERSION_API_PIXEL_ID: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/CONVERSION_API_PIXEL_ID}}"
+        CONVERSION_API_TOKEN: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/CONVERSION_API_TOKEN}}"
+        TRIGGER_CONVERSION_EVENT_QUEUE_URL: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/TRIGGER_CONVERSION_EVENT_QUEUE_URL}}"
+        ELASTIC_ENDPOINT: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/ELASTIC_ENDPOINT}}"
+        ELASTIC_API_KEY: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/ELASTIC_API_KEY}}"
+        CREATE_PRODUCT_QUEUE_ARN: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/CREATE_PRODUCT_QUEUE_ARN}}"
+        CREATE_PRODUCT_SQS: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/CREATE_PRODUCT_SQS}}"
+        DELETE_ZOHO_PRODUCT_SQS: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/DELETE_ZOHO_PRODUCT_SQS}}"
 
 Resources:
   # product apis
@@ -60,7 +60,7 @@ Resources:
               Effect: Allow
               Action:
                 - sqs:SendMessage
-              Resource: "arn:aws:sqs:me-central-1:792123045589:createZohoProduct"
+              Resource: "Your zoho create product ARN"
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
@@ -114,14 +114,14 @@ Resources:
               Effect: Allow
               Action:
                 - sqs:SendMessage
-              Resource: !Sub '{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/CREATE_PRODUCT_QUEUE_ARN}}'
+              Resource: !Sub '{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/CREATE_PRODUCT_QUEUE_ARN}}'
         - Version: "2012-10-17"
           Statement:
             - Sid: AllowSQSSendMessagesDeleteProduct
               Effect: Allow
               Action:
                 - sqs:SendMessage
-              Resource: !Sub '{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/DELETE_ZOHO_PRODUCT_QUEUE_ARN}}'
+              Resource: !Sub '{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/DELETE_ZOHO_PRODUCT_QUEUE_ARN}}'
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
@@ -175,7 +175,7 @@ Resources:
               Effect: Allow
               Action:
                 - sqs:SendMessage
-              Resource: !Sub "{{resolve:ssm:/HANOOOT/${EnvironmentParameter}/TRIGGER_CONVERSION_EVENT_QUEUE_ARN}}"
+              Resource: !Sub "{{resolve:ssm:/ECOMMERCE/${EnvironmentParameter}/TRIGGER_CONVERSION_EVENT_QUEUE_ARN}}"
     Metadata:
       BuildMethod: esbuild
       BuildProperties:

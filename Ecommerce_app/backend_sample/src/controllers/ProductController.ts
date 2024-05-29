@@ -42,12 +42,12 @@ export class ProductController {
         if (financialSetting && financialSetting.exchange_rate) {
             const exchangeRate = financialSetting.exchange_rate;
             const fieldsToCalculate = [
-                'hanooot_price',
-                'hanooot_discount',
+                'price',
+                'discount',
                 'commission',
                 'shipping_cost',
-                'hanooot_price_air',
-                'hanooot_discount_air',
+                'price_air',
+                'discount_air',
                 'shipping_cost_by_air'
             ];
 
@@ -413,7 +413,7 @@ export class ProductController {
                                 content_type: "product",
                                 content_name: product?.name?.en || product?.name?.ar,
                                 content_category: product?.category_name,
-                                value: product?.price_iqd?.hanooot_discount || product?.price_iqd?.hanooot_price,
+                                value: product?.price_iqd?.discount || product?.price_iqd?.price,
                                 images_gallery: product?.images_gallery,
                                 product_link: product?.dynamic_link,
                                 fb_content: [
@@ -421,7 +421,7 @@ export class ProductController {
                                         product_name: product?.name,
                                         ASIN: product?.ASIN,
                                         quantity: product?.quantity || 1,
-                                        price: product?.price_iqd?.hanooot_discount || product?.price_iqd?.hanooot_price
+                                        price: product?.price_iqd?.discount || product?.price_iqd?.price
                                     }
                                 ]
                             }

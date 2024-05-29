@@ -1,5 +1,5 @@
 {
-  "name": "hanooot_backend_products_service",
+  "name": "ecommerce_backend_products_service",
   "version": "1.0.0",
   "description": "Products Endpoints",
   "main": "app.js",
@@ -18,8 +18,8 @@
     "lint": "eslint '*.ts' --quiet --fix",
     "compile": "tsc",
     "test": "npm run compile && npm run unit",
-    "deploy-stage": "sam build && sam deploy -t ./.aws-sam/build/template.yaml --stack-name hanooot-stage-backend-products-service --resolve-s3 --capabilities CAPABILITY_IAM --region me-central-1 --parameter-overrides EnvironmentParameter=Stage",
-    "deploy-prod": "sam build && sam deploy -t ./.aws-sam/build/template.yaml --stack-name hanooot-prod-backend-products2-service --resolve-s3 --capabilities CAPABILITY_IAM --region me-central-1 --parameter-overrides EnvironmentParameter=Prod"
+    "deploy-stage": "sam build && sam deploy -t ./.aws-sam/build/template.yaml --stack-name ecommerce-stage-backend-products-service --resolve-s3 --capabilities CAPABILITY_IAM --region me-central-1 --parameter-overrides EnvironmentParameter=Stage",
+    "deploy-prod": "sam build && sam deploy -t ./.aws-sam/build/template.yaml --stack-name ecommerce-prod-backend-products2-service --resolve-s3 --capabilities CAPABILITY_IAM --region me-central-1 --parameter-overrides EnvironmentParameter=Prod"
   },
   "dependencies": {
     "@aws-sdk/credential-providers": "^3.507.0",

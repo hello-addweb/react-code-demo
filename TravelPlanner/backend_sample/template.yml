@@ -33,7 +33,7 @@ Resources:
       Environment:
         Variables:
           ENVIRONMENT_NAME: stage
-          EventBusName: DefaultGoSafrEventBus
+          EventBusName: TravelPlannerEventBus
       Events:
         Get:
           Type: HttpApi
@@ -43,7 +43,7 @@ Resources:
             Method: get
       Policies:
         - EventBridgePutEventsPolicy:
-            EventBusName: DefaultGoSafrEventBus
+            EventBusName: TravelPlannerEventBus
         - DynamoDBReadPolicy:
             TableName: !Ref JourneyFeedServiceTable
         - DynamoDBWritePolicy:
@@ -101,7 +101,7 @@ Resources:
         JourneyCreated:
           Type: EventBridgeRule
           Properties:
-            EventBusName: DefaultGoSafrEventBus    
+            EventBusName: TravelPlannerEventBus    
             Pattern:
               detail-type:
                 - JourneyCreated
@@ -110,7 +110,7 @@ Resources:
         PinpointEvents:
           Type: EventBridgeRule
           Properties:
-            EventBusName: DefaultGoSafrEventBus     
+            EventBusName: TravelPlannerEventBus     
             Pattern:
               detail-type:
                 - CustomMessagePublished
@@ -119,7 +119,7 @@ Resources:
         UserEventRule:
           Type: EventBridgeRule
           Properties:
-            EventBusName: DefaultGoSafrEventBus     
+            EventBusName: TravelPlannerEventBus     
             Pattern:
               detail-type:
                 - InsurancesUpdated
@@ -130,7 +130,7 @@ Resources:
         ParticipantsRule:
           Type: EventBridgeRule
           Properties:
-            EventBusName: DefaultGoSafrEventBus
+            EventBusName: TravelPlannerEventBus
             Pattern:
               detail-type:
                 - ParticipantAdded
@@ -143,7 +143,7 @@ Resources:
         AlertsRule:
           Type: EventBridgeRule
           Properties:
-            EventBusName: DefaultGoSafrEventBus
+            EventBusName: TravelPlannerEventBus
             Pattern:
               detail-type:
                 - AlertCreated
@@ -155,7 +155,7 @@ Resources:
         FlightAlertsRule:
           Type: EventBridgeRule
           Properties:
-            EventBusName: DefaultGoSafrEventBus
+            EventBusName: TravelPlannerEventBus
             Pattern:
               detail-type:
                 - FlightAlertCreated
@@ -167,7 +167,7 @@ Resources:
         TripsRule:
           Type: EventBridgeRule
           Properties:
-            EventBusName: DefaultGoSafrEventBus
+            EventBusName: TravelPlannerEventBus
             Pattern:
               detail-type:
                 - TripAdded

@@ -1,8 +1,8 @@
-# hanooot_backend_products_service
+# ecommerce_backend_products_service
 
 ## Overview
 
-This project serves as a template for a Hanooot backend application. It includes configurations for local development, building, testing, and deploying to different environments.
+This project serves as a template for a Ecommerce backend application. It includes configurations for local development, building, testing, and deploying to different environments.
 
 ## Prerequisites
 
@@ -13,14 +13,7 @@ Make sure you have the following installed on your machine:
 
 ## Getting Started
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/hanooot_backend_template.git
-cd hanooot_backend_template
-```
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 
 - npm install
 

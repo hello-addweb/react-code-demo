@@ -106,11 +106,11 @@ export interface Price {
   amazon_discount_uae: string;
   amazon_price: number;
   amazon_discount: number;
-  hanooot_price: number;
-  hanooot_discount: number;
+  price: number;
+  discount: number;
   commission: number;
-  hanooot_price_air: number;
-  hanooot_discount_air: number;
+  price_air: number;
+  discount_air: number;
   shipping_cost: number;
   shipping_cost_by_air: number;
   discount_percentage: number;

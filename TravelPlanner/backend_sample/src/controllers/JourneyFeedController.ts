@@ -5,15 +5,13 @@ import httpErrors from 'http-errors';
 import * as JourneyFeedModel from '../shared/JourneyFeedDataAccess'
 import * as FeaturedEntries from '../shared/FeaturedEntries'
 import * as TimelineEntryModel from '../shared/TimelineEntryDataAccess'
-import { JourneyFeed } from '../classes/JourneyCreated';
-import { AddedParticipant } from "../classes/ParticipantAdded";
 import * as UserModel from '../shared/UserDataAccess'
 import { InsuranceUpdated } from "../classes/InsuranceUpdate";
 import { DocumentsUpdated } from '../classes/DocumentsUpdate';
 import { ProfileUpdated } from "../classes/ProfileUpdate";
 import { MessagePublished } from "../classes/MessagePublish";
-import { Timelines } from "../classes/Timelines";
-import { TimelineCount } from "../classes/TimelineCount";
+import { JourneyFeed } from '../classes/JourneyCreated';
+import { AddedParticipant } from "../classes/ParticipantAdded";
 import { TripData } from "../classes/TripData";
 import { Alert } from "../classes/Alert";
 
